@@ -6,6 +6,7 @@
 <title>ProffPaint AS — Maler i Oslo og Viken</title>
 <meta name="description" content="ProffPaint AS — malerfirma i Ytre Enebakk. Innvendig og utvendig maling, sparkling, tapetsering og flislegging. 413 fullførte jobber, 4.97 av 5 på Mittanbud.">
 <meta name="robots" content="index, follow">
+<link rel="icon" href="proffpaint-as-Photoroom.png" type="image/png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ProffPaint AS","telephone":"+4745059555","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"Ekornveien 14","postalCode":"1914","addressLocality":"Ytre Enebakk","addressCountry":"NO"},"openingHours":["Mo-Fr 08:00-17:00","Sa 08:00-14:00"],"sameAs":["https://mittanbud.no/bedrift/418486","https://www.instagram.com/proffpaint_as/"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.97","reviewCount":"303"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,7 @@
   --bg:#f6f1ea; --bg2:#ece2d4; --ink:#221f1c; --ink2:#2f2a25; --mid:#6b5f54; --faint:#8a7d6e;
   --rule:rgba(34,31,28,.1); --gold:#b5703a; --gold2:#d99a5f;
   --fd:'Cormorant',Georgia,serif; --fb:'Libre Baskerville',Georgia,serif; --fm:'DM Mono','Courier New',monospace;
-  --ease:0.6s cubic-bezier(0.16,1,0.3,1);
+  --ease-fn:cubic-bezier(0.16,1,0.3,1); --ease:0.6s var(--ease-fn);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -84,7 +85,7 @@ button{font-family:var(--fm);cursor:pointer;border:none;background:none}
 .hero-right{position:relative;overflow:hidden;background:var(--bg2)}
 @media(max-width:767px){.hero-right{height:55vw;min-height:220px}}
 @media(min-width:768px){.hero-right{position:sticky;top:0;height:90vh}}
-.hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:contrast(1.05) brightness(.92);transform:scale(1.04);transition:transform 2s var(--ease)}
+.hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:contrast(1.05) brightness(.92);transform:scale(1.04);transition:transform 2s var(--ease-fn)}
 .hero-right img.loaded{transform:scale(1)}
 .hero-vert{position:absolute;right:1.5rem;bottom:3rem;writing-mode:vertical-rl;font-family:var(--fm);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);z-index:1}
 .hero-badge{position:absolute;left:-1px;bottom:3rem;background:var(--bg);padding:1.2rem 1.5rem;z-index:1}
@@ -107,7 +108,7 @@ button{font-family:var(--fm);cursor:pointer;border:none;background:none}
 @media(min-width:768px){.work-grid{grid-template-columns:3fr 5fr 3fr;grid-template-rows:480px 360px 520px}}
 .wg-item{position:relative;overflow:hidden;background:var(--bg2);aspect-ratio:3/4}
 @media(min-width:768px){.wg-item{aspect-ratio:unset}.wg-item:nth-child(1){grid-column:1;grid-row:1}.wg-item:nth-child(2){grid-column:2;grid-row:1/3}.wg-item:nth-child(3){grid-column:3;grid-row:1}.wg-item:nth-child(4){grid-column:1;grid-row:2/4}.wg-item:nth-child(5){grid-column:3;grid-row:2/4}.wg-item:nth-child(6){grid-column:2;grid-row:3}}
-.wg-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.9) contrast(1.04);transition:transform .9s var(--ease),filter .6s;transform:scale(1.05)}
+.wg-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.9) contrast(1.04);transition:transform .9s var(--ease-fn),filter .6s;transform:scale(1.05)}
 .wg-item:hover img{transform:scale(1);filter:brightness(.96) contrast(1)}
 .wg-num{position:absolute;top:-1.5rem;left:-.5rem;font-family:var(--fd);font-style:italic;font-size:clamp(5rem,9vw,9rem);font-weight:300;color:var(--bg);line-height:1;pointer-events:none;z-index:2;mix-blend-mode:screen;opacity:.6}
 .wg-label{position:absolute;bottom:1.2rem;left:1.2rem;right:1.2rem;font-family:var(--fm);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
@@ -117,7 +118,7 @@ button{font-family:var(--fm);cursor:pointer;border:none;background:none}
 .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
 @media(min-width:700px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
 .gal-item{position:relative;overflow:hidden;background:var(--bg2);aspect-ratio:1/1}
-.gal-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.92) contrast(1.04);transition:transform .8s var(--ease)}
+.gal-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.92) contrast(1.04);transition:transform .8s var(--ease-fn)}
 .gal-item:hover img{transform:scale(1.05)}
 .gal-cap{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(34,31,28,.75) 0%,transparent 100%);font-family:var(--fm);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
 .gal-item:hover .gal-cap{opacity:1;transform:none}
@@ -163,7 +164,7 @@ button{font-family:var(--fm);cursor:pointer;border:none;background:none}
 .svc-body{font-family:var(--fm);font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.9;max-width:48ch}
 .svc-price{font-family:var(--fm);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--rule);width:fit-content}
 .svc-item-media{position:relative;overflow:hidden;min-height:240px;background:var(--bg2)}
-.svc-item-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.85) contrast(1.05);transition:transform .8s var(--ease)}
+.svc-item-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.85) contrast(1.05);transition:transform .8s var(--ease-fn)}
 .svc-item:hover .svc-item-media img{transform:scale(1.04)}
 .svc-extra{padding:clamp(3rem,5vw,5rem) clamp(2rem,5vw,4rem);border-bottom:1px solid var(--rule)}
 .svc-extra-title{font-family:var(--fm);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:2rem}
@@ -247,7 +248,7 @@ button{font-family:var(--fm);cursor:pointer;border:none;background:none}
 @media(min-width:900px){.about-hero{grid-template-columns:1fr 1fr;min-height:90vh}.about-text-col{border-left:1px solid var(--rule)}}
 .about-img-col{position:relative;overflow:hidden;background:var(--ink2);min-height:65vw}
 @media(min-width:900px){.about-img-col{min-height:unset}}
-.about-img-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.82) contrast(1.06);transform:scale(1.04);transition:transform 2s var(--ease)}
+.about-img-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.82) contrast(1.06);transform:scale(1.04);transition:transform 2s var(--ease-fn)}
 .about-img-col img.loaded{transform:scale(1)}
 .about-text-col{padding:clamp(4rem,8vw,8rem) clamp(2.5rem,6vw,5.5rem);display:flex;flex-direction:column;gap:2rem;justify-content:center;background:var(--bg)}
 .about-overline{font-family:var(--fm);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.8rem}
@@ -425,7 +426,7 @@ footer{border-top:1px solid var(--rule);background:var(--bg);padding:3.5rem clam
       <div class="wg-item ri"><span class="wg-num" aria-hidden="true">III</span><img loading="lazy" src="https://images.pexels.com/photos/6444461/pexels-photo-6444461.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Nymalt soverom i lyse farger"><span class="wg-label">Soverom</span></div>
       <div class="wg-item ri"><span class="wg-num" aria-hidden="true">IV</span><img loading="lazy" src="https://images.pexels.com/photos/8961064/pexels-photo-8961064.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Håndverker som maler kjøkken"><span class="wg-label">Kjøkken</span></div>
       <div class="wg-item ri"><span class="wg-num" aria-hidden="true">V</span><img loading="lazy" src="https://images.pexels.com/photos/8961116/pexels-photo-8961116.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Hus under utvendig maling med stillas"><span class="wg-label">Fasade — utvendig</span></div>
-      <div class="wg-item ri"><span class="wg-num" aria-hidden="true">VI</span><img loading="lazy" src="https://images.pexels.com/photos/6444423/pexels-photo-6444423.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Sparkling og overflatebehandling av vegg"><span class="wg-label">Sparkling</span></div>
+      <div class="wg-item ri"><span class="wg-num" aria-hidden="true">VI</span><img loading="lazy" src="https://images.pexels.com/photos/5691618/pexels-photo-5691618.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Sparkling og overflatebehandling av vegg"><span class="wg-label">Sparkling</span></div>
     </div>
   </section>
 
@@ -498,7 +499,7 @@ footer{border-top:1px solid var(--rule);background:var(--bg);padding:3.5rem clam
         <p class="svc-body r d2">Grundig sparkling av sprekker, skjøter og ujevnheter før maling eller tapet. Riktig underlagsbehandling og tørketid mellom strøkene er avgjørende for et glatt sluttresultat.</p>
         <span class="svc-price r d3">Ta kontakt for pris</span>
       </div>
-      <div class="svc-item-media ri"><img loading="lazy" src="https://images.pexels.com/photos/6444423/pexels-photo-6444423.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sparkling av vegg før maling"></div>
+      <div class="svc-item-media ri"><img loading="lazy" src="https://images.pexels.com/photos/5691618/pexels-photo-5691618.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sparkling av vegg før maling"></div>
     </div>
     <div class="svc-item">
       <div class="svc-item-main">
@@ -557,7 +558,7 @@ footer{border-top:1px solid var(--rule);background:var(--bg);padding:3.5rem clam
     </div>
     <div class="svc-hero-img ri">
       <!-- GALLERI hero — replace with @proffpaint_as foto: utvalgt prosjekt -->
-      <img loading="lazy" src="https://images.pexels.com/photos/8961047/pexels-photo-8961047.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Maler fra ProffPaint i arbeid">
+      <img loading="lazy" src="https://images.pexels.com/photos/6474338/pexels-photo-6474338.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Maler fra ProffPaint i arbeid">
     </div>
   </div>
 
@@ -578,7 +579,7 @@ footer{border-top:1px solid var(--rule);background:var(--bg);padding:3.5rem clam
     <div class="gal-item ri" role="listitem"><img loading="lazy" src="https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Nymalt stue med hvite vegger og naturlig lys"><span class="gal-cap">Innvendig — stue</span></div>
     <div class="gal-item ri" role="listitem"><img loading="lazy" src="https://images.pexels.com/photos/6444461/pexels-photo-6444461.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Nymalt soverom i lyse, rolige farger"><span class="gal-cap">Innvendig — soverom</span></div>
     <div class="gal-item ri" role="listitem"><img loading="lazy" src="https://images.pexels.com/photos/8961116/pexels-photo-8961116.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hus under utvendig maling med stillas"><span class="gal-cap">Utvendig — fasade</span></div>
-    <div class="gal-item ri" role="listitem"><img loading="lazy" src="https://images.pexels.com/photos/6444423/pexels-photo-6444423.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sparkling og overflatebehandling av vegg"><span class="gal-cap">Sparkling</span></div>
+    <div class="gal-item ri" role="listitem"><img loading="lazy" src="https://images.pexels.com/photos/5691618/pexels-photo-5691618.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sparkling og overflatebehandling av vegg"><span class="gal-cap">Sparkling</span></div>
     <div class="gal-item ri" role="listitem"><img loading="lazy" src="https://images.pexels.com/photos/6444256/pexels-photo-6444256.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tapetsering av vegg med strukturtapet"><span class="gal-cap">Tapetsering</span></div>
     <div class="gal-item ri" role="listitem"><img loading="lazy" src="https://images.pexels.com/photos/8961064/pexels-photo-8961064.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Håndverker som maler kjøkken"><span class="gal-cap">Innvendig — kjøkken</span></div>
     <div class="gal-item ri" role="listitem"><img loading="lazy" src="https://images.pexels.com/photos/6585757/pexels-photo-6585757.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Flislegging av baderom"><span class="gal-cap">Flislegging — bad</span></div>
